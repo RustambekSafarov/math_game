@@ -3,19 +3,7 @@ import 'package:mathgame/src/data/models/dashboard.dart';
 import 'package:tuple/tuple.dart';
 import 'app_assets.dart';
 
-enum GameCategoryType {
-  CALCULATOR,
-  GUESS_SIGN,
-  SQUARE_ROOT,
-  MATH_PAIRS,
-  CORRECT_ANSWER,
-  MAGIC_TRIANGLE,
-  MENTAL_ARITHMETIC,
-  QUICK_CALCULATION,
-  MATH_GRID,
-  PICTURE_PUZZLE,
-  NUMBER_PYRAMID
-}
+enum GameCategoryType { CALCULATOR, GUESS_SIGN, SQUARE_ROOT, MATH_PAIRS, CORRECT_ANSWER, MAGIC_TRIANGLE, MENTAL_ARITHMETIC, QUICK_CALCULATION, MATH_GRID, PICTURE_PUZZLE, NUMBER_PYRAMID }
 
 enum PuzzleType { MATH_PUZZLE, MEMORY_PUZZLE, BRAIN_PUZZLE }
 
@@ -61,8 +49,8 @@ class KeyUtil {
       opacity: 0.07,
       icon: AppAssets.icMathPuzzle,
       outlineIcon: AppAssets.icMathPuzzleOutline,
-      subtitle: "Each game with simple calculation with different approach.",
-      title: "Math Puzzle",
+      subtitle: "Har bir o'yin har xil yondashuv va oddiy hisoblash bilan.",
+      title: "Matematik boshqotirma",
       fillIconColor: Color(0xff4895ef),
       outlineIconColor: Color(0xff436add),
     ),
@@ -72,8 +60,8 @@ class KeyUtil {
       opacity: 0.07,
       icon: AppAssets.icMemoryPuzzle,
       outlineIcon: AppAssets.icMemoryPuzzleOutline,
-      subtitle: "Memorise numbers & signs before applying calculation to them.",
-      title: "Memory Puzzle",
+      subtitle: "Hisoblashdan oldin raqamlar va belgilarni yodlang.",
+      title: "Xotira boshqotirmasi",
       fillIconColor: Color(0xff9f2beb),
       outlineIconColor: Color(0xff560BAD),
     ),
@@ -83,9 +71,8 @@ class KeyUtil {
       opacity: 0.12,
       icon: AppAssets.icTrainBrain,
       outlineIcon: AppAssets.icTrainBrainOutline,
-      subtitle:
-          "Enhance logical thinking, concentration and core cognitive skills.",
-      title: "Train Your Brain",
+      subtitle: "Mantiqiy fikrlash, diqqatni jamlash va asosiy kognitiv qobiliyatlarni rivojlantirish.",
+      title: "Miyangizni mashq qildiring",
       fillIconColor: Color(0xfff72585),
       outlineIconColor: Color(0xffB5179E),
     ),

@@ -46,29 +46,23 @@ class CalculatorView extends StatelessWidget {
                 constraints: BoxConstraints.expand(),
                 child: Column(
                   children: <Widget>[
-                    CommonInfoTextView<CalculatorProvider>(
-                        gameCategoryType: GameCategoryType.CALCULATOR),
+                    CommonInfoTextView<CalculatorProvider>(gameCategoryType: GameCategoryType.CALCULATOR),
                     Expanded(
                       flex: 2,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Consumer<CalculatorProvider>(
-                              builder: (context, calculatorProvider, child) {
+                          Consumer<CalculatorProvider>(builder: (context, calculatorProvider, child) {
                             return Text(
                               calculatorProvider.currentState.question,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .subtitle2!
-                                  .copyWith(fontSize: 30),
+                              style: Theme.of(context).textTheme.subtitle2!.copyWith(fontSize: 30),
                             );
                           }),
                         ],
                       ),
                     ),
                     Selector<CalculatorProvider, Tuple2<double, double>>(
-                      selector: (p0, p1) =>
-                          Tuple2(p1.currentScore, p1.oldScore),
+                      selector: (p0, p1) => Tuple2(p1.currentScore, p1.oldScore),
                       builder: (context, tuple2, child) {
                         return CommonWrongAnswerAnimationView(
                           currentScore: tuple2.item1.toInt(),
@@ -83,12 +77,7 @@ class CalculatorView extends StatelessWidget {
                           builder: (context, result, child) {
                             return Text(
                               result,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .subtitle2!
-                                  .copyWith(
-                                  fontSize: 30,
-                                  color: colorTuple.item1),
+                              style: Theme.of(context).textTheme.subtitle2!.copyWith(fontSize: 30, color: colorTuple.item1),
                             );
                           },
                         ),
@@ -99,11 +88,9 @@ class CalculatorView extends StatelessWidget {
                       flex: 8,
                       child: LayoutBuilder(builder: (context, constraints) {
                         return GridView(
-                          gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
+                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 3,
-                            childAspectRatio: (constraints.maxWidth / 3) /
-                                ((constraints.maxHeight - 24) / 4),
+                            childAspectRatio: (constraints.maxWidth / 3) / ((constraints.maxHeight - 24) / 4),
                           ),
                           padding: const EdgeInsets.only(bottom: 24),
                           shrinkWrap: true,
@@ -121,30 +108,24 @@ class CalculatorView extends StatelessWidget {
                               "3",
                               "Clear",
                               "0",
-                              "Back"
+                              "Back",
                             ].map(
                               (e) {
                                 if (e == "Clear") {
                                   return CommonClearButton(
-                                      text: "Clear",
+                                      text: "Tozalash",
                                       onTab: () {
-                                        context
-                                            .read<CalculatorProvider>()
-                                            .clearResult();
+                                        context.read<CalculatorProvider>().clearResult();
                                       });
                                 } else if (e == "Back") {
                                   return CommonBackButton(onTab: () {
-                                    context
-                                        .read<CalculatorProvider>()
-                                        .backPress();
+                                    context.read<CalculatorProvider>().backPress();
                                   });
                                 } else {
                                   return CommonNumberButton(
                                     text: e,
                                     onTab: () {
-                                      context
-                                          .read<CalculatorProvider>()
-                                          .checkResult(e);
+                                      context.read<CalculatorProvider>().checkResult(e);
                                     },
                                     colorTuple: colorTuple,
                                   );

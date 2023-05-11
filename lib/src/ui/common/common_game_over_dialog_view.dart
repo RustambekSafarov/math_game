@@ -18,12 +18,12 @@ class CommonGameOverDialogView extends StatelessWidget {
       children: [
         SizedBox(height: 6),
         Text(
-          "Game Over!!!",
+          "O'yin tugadi!!!",
           style: Theme.of(context).textTheme.bodyText1!.copyWith(fontSize: 18),
         ),
         SizedBox(height: 24),
         Text(
-          "Your highest score is $score",
+          "Sizning eng yuqori ballingiz $score",
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.caption!.copyWith(fontSize: 16),
         ),
@@ -53,11 +53,7 @@ class CommonGameOverDialogView extends StatelessWidget {
                             end: Alignment.bottomCenter,
                           ),
                         ),
-                        child: Text("RESTART",
-                            style: Theme.of(context)
-                                .textTheme
-                                .subtitle1!
-                                .copyWith(fontSize: 18, color: Colors.white))),
+                        child: Text("QAYTA BOSHLASH", style: Theme.of(context).textTheme.subtitle1!.copyWith(fontSize: 18, color: Colors.white))),
                   ),
                 ),
               ),

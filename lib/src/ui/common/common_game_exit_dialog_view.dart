@@ -15,13 +15,13 @@ class CommonGameExitDialogView extends StatelessWidget {
       children: [
         SizedBox(height: 6),
         Text(
-          "Are you sure you want to quit the game?",
+          "Haqiqatan ham oʻyindan chiqmoqchimisiz?",
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.bodyText1!.copyWith(fontSize: 18),
         ),
         SizedBox(height: 24),
         Text(
-          "Your current score is $score",
+          "Sizning joriy ballingiz $score",
           style: Theme.of(context).textTheme.caption!.copyWith(fontSize: 16),
         ),
         SizedBox(height: 24),
@@ -50,11 +50,7 @@ class CommonGameExitDialogView extends StatelessWidget {
                             end: Alignment.bottomCenter,
                           ),
                         ),
-                        child: Text("YES",
-                            style: Theme.of(context)
-                                .textTheme
-                                .subtitle1!
-                                .copyWith(fontSize: 18, color: Colors.white))),
+                        child: Text("HA", style: Theme.of(context).textTheme.subtitle1!.copyWith(fontSize: 18, color: Colors.white))),
                   ),
                 ),
               ),

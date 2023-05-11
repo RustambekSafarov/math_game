@@ -25,18 +25,14 @@ class CommonDifficultyView extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 4),
               child: Text(
-                "Change Difficulty",
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyText1!
-                    .copyWith(fontSize: 18),
+                "Qiyinlik darajasini tanlang",
+                style: Theme.of(context).textTheme.bodyText1!.copyWith(fontSize: 18),
               ),
             ),
             Card(
               elevation: 0,
               color: Theme.of(context).colorScheme.iconCardBgColor,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(16))),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16))),
               child: InkWell(
                 borderRadius: BorderRadius.all(Radius.circular(16)),
                 onTap: () {
@@ -57,17 +53,17 @@ class CommonDifficultyView extends StatelessWidget {
         ),
         SizedBox(height: 24),
         CommonDifficultyButtonView(
-          name: "HIGH",
+          name: "YUQORI",
           difficultyType: DifficultyType.HIGH,
           selectedDifficulty: selectedDifficulty,
         ),
         CommonDifficultyButtonView(
-          name: "MEDIUM",
+          name: "O'RTA",
           difficultyType: DifficultyType.MEDIUM,
           selectedDifficulty: selectedDifficulty,
         ),
         CommonDifficultyButtonView(
-          name: "LOW",
+          name: "PAST",
           difficultyType: DifficultyType.LOW,
           selectedDifficulty: selectedDifficulty,
         ),

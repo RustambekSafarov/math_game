@@ -18,8 +18,7 @@ class DashboardView extends StatefulWidget {
   _DashboardViewState createState() => _DashboardViewState();
 }
 
-class _DashboardViewState extends State<DashboardView>
-    with SingleTickerProviderStateMixin {
+class _DashboardViewState extends State<DashboardView> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<Offset> _offsetLeftEnter;
   late Animation<Offset> _offsetRightEnter;
@@ -78,11 +77,7 @@ class _DashboardViewState extends State<DashboardView>
                       children: <Widget>[
                         SizedBox(width: 12),
                         Container(
-                          decoration: BoxDecoration(
-                              color: Theme.of(context)
-                                  .colorScheme
-                                  .infoDialogBgColor,
-                              borderRadius: BorderRadius.circular(18)),
+                          decoration: BoxDecoration(color: Theme.of(context).colorScheme.infoDialogBgColor, borderRadius: BorderRadius.circular(18)),
                           padding: const EdgeInsets.all(12.0),
                           child: Row(
                             children: [
@@ -93,10 +88,7 @@ class _DashboardViewState extends State<DashboardView>
                               ),
                               SizedBox(width: 5),
                               Consumer<DashboardProvider>(
-                                builder: (context, model, child) => Text(
-                                    model.overallScore.toString(),
-                                    style:
-                                        Theme.of(context).textTheme.subtitle1),
+                                builder: (context, model, child) => Text(model.overallScore.toString(), style: Theme.of(context).textTheme.subtitle1),
                               ),
                             ],
                           ),
@@ -109,8 +101,7 @@ class _DashboardViewState extends State<DashboardView>
                         showDialog<bool>(
                           context: context,
                           builder: (newContext) {
-                            final model = Provider.of<ThemeProvider>(context,
-                                listen: true);
+                            final model = Provider.of<ThemeProvider>(context, listen: true);
                             return CommonAlertDialog(
                               child: ChangeNotifierProvider.value(
                                 value: model,
@@ -127,9 +118,7 @@ class _DashboardViewState extends State<DashboardView>
                       child: Padding(
                         padding: const EdgeInsets.all(12),
                         child: SvgPicture.asset(
-                          Theme.of(context).brightness == Brightness.light
-                              ? AppAssets.ic3dStairsDark
-                              : AppAssets.ic3dStairsLight ,
+                          Theme.of(context).brightness == Brightness.light ? AppAssets.ic3dStairsDark : AppAssets.ic3dStairsLight,
                           width: 24,
                           height: 24,
                         ),
@@ -143,9 +132,7 @@ class _DashboardViewState extends State<DashboardView>
                       child: Padding(
                         padding: const EdgeInsets.all(12),
                         child: SvgPicture.asset(
-                          Theme.of(context).brightness == Brightness.light
-                              ? AppAssets.icDarkMode
-                              : AppAssets.icLightMode,
+                          Theme.of(context).brightness == Brightness.light ? AppAssets.icDarkMode : AppAssets.icLightMode,
                           width: 24,
                           height: 24,
                         ),
@@ -162,20 +149,13 @@ class _DashboardViewState extends State<DashboardView>
                       children: <Widget>[
                         SizedBox(height: 36),
                         Text(
-                          "Math Matrix",
-                          style: Theme.of(context)
-                              .textTheme
-                              .subtitle2!
-                              .copyWith(
-                                  fontSize: 28, fontWeight: FontWeight.bold),
+                          "Matematik muhit",
+                          style: Theme.of(context).textTheme.subtitle2!.copyWith(fontSize: 28, fontWeight: FontWeight.bold),
                         ),
                         SizedBox(height: 12),
                         Text(
-                          "Train Your Brain, Improve Your Math Skill",
-                          style: Theme.of(context)
-                              .textTheme
-                              .caption!
-                              .copyWith(fontSize: 14),
+                          "Miyyangizni mashq qiling, Matematik mahoratingizni oshiring",
+                          style: Theme.of(context).textTheme.caption!.copyWith(fontSize: 14),
                         ),
                         SizedBox(height: 36),
                         DashboardButtonView(
@@ -186,8 +166,7 @@ class _DashboardViewState extends State<DashboardView>
                               context,
                               KeyUtil.home,
                               ModalRoute.withName(KeyUtil.dashboard),
-                              arguments: Tuple2(KeyUtil.dashboardItems[0],
-                                  MediaQuery.of(context).padding.top),
+                              arguments: Tuple2(KeyUtil.dashboardItems[0], MediaQuery.of(context).padding.top),
                             );
                           },
                         ),
@@ -200,8 +179,7 @@ class _DashboardViewState extends State<DashboardView>
                               context,
                               KeyUtil.home,
                               ModalRoute.withName(KeyUtil.dashboard),
-                              arguments: Tuple2(KeyUtil.dashboardItems[1],
-                                  MediaQuery.of(context).padding.top),
+                              arguments: Tuple2(KeyUtil.dashboardItems[1], MediaQuery.of(context).padding.top),
                             );
                           },
                         ),
@@ -214,8 +192,7 @@ class _DashboardViewState extends State<DashboardView>
                               context,
                               KeyUtil.home,
                               ModalRoute.withName(KeyUtil.dashboard),
-                              arguments: Tuple2(KeyUtil.dashboardItems[2],
-                                  MediaQuery.of(context).padding.top),
+                              arguments: Tuple2(KeyUtil.dashboardItems[2], MediaQuery.of(context).padding.top),
                             );
                           },
                         ),
@@ -225,9 +202,7 @@ class _DashboardViewState extends State<DashboardView>
                 ),
                 SizedBox(height: 24),
                 Container(
-                  decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.infoDialogBgColor,
-                      borderRadius: BorderRadius.circular(18)),
+                  decoration: BoxDecoration(color: Theme.of(context).colorScheme.infoDialogBgColor, borderRadius: BorderRadius.circular(18)),
                   padding: const EdgeInsets.all(12.0),
                   margin: const EdgeInsets.symmetric(horizontal: 12),
                   child: Row(
@@ -235,21 +210,12 @@ class _DashboardViewState extends State<DashboardView>
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Expanded(
-                        child: Text("Math Matrix by Nividata",
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyText2!
-                                .copyWith(fontWeight: FontWeight.normal)),
+                        child: Text("Math Matrix by Nividata", style: Theme.of(context).textTheme.bodyText2!.copyWith(fontWeight: FontWeight.normal)),
                       ),
                       SizedBox(width: 12),
                       FutureBuilder<PackageInfo>(
                         future: PackageInfo.fromPlatform(),
-                        builder: (context, snapshot) => Text(
-                            "v${snapshot.data?.version}",
-                            style: Theme.of(context)
-                                .textTheme
-                                .caption!
-                                .copyWith(fontSize: 14)),
+                        builder: (context, snapshot) => Text("v${snapshot.data?.version}", style: Theme.of(context).textTheme.caption!.copyWith(fontSize: 14)),
                       ),
                     ],
                   ),

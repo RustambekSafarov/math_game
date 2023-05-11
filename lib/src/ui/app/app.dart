@@ -23,10 +23,9 @@ class MyApp extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
 
-    return Consumer<ThemeProvider>(
-        builder: (context, ThemeProvider provider, child) {
+    return Consumer<ThemeProvider>(builder: (context, ThemeProvider provider, child) {
       return MaterialApp(
-        title: 'Math Matrix',
+        title: 'Matematik muhit',
         debugShowCheckedModeBanner: false,
         theme: AppTheme.theme,
         darkTheme: AppTheme.darkTheme,
@@ -34,9 +33,7 @@ class MyApp extends StatelessWidget {
         initialRoute: KeyUtil.splash,
         routes: appRoutes,
         // home: DashboardView(),
-        navigatorObservers: [
-          FirebaseAnalyticsObserver(analytics: firebaseAnalytics)
-        ],
+        navigatorObservers: [FirebaseAnalyticsObserver(analytics: firebaseAnalytics)],
       );
     });
   }

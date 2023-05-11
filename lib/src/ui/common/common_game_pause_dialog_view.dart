@@ -16,8 +16,7 @@ class CommonGamePauseDialogView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    GameInfoDialog gameInfoDialog =
-        DialogInfoUtil.getInfoDialogData(gameCategoryType);
+    GameInfoDialog gameInfoDialog = DialogInfoUtil.getInfoDialogData(gameCategoryType);
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -28,17 +27,13 @@ class CommonGamePauseDialogView extends StatelessWidget {
               padding: const EdgeInsets.only(left: 4),
               child: Text(
                 gameInfoDialog.title,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyText1!
-                    .copyWith(fontSize: 18),
+                style: Theme.of(context).textTheme.bodyText1!.copyWith(fontSize: 18),
               ),
             ),
             Card(
               elevation: 0,
               color: Theme.of(context).colorScheme.iconCardBgColor,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(16))),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16))),
               child: InkWell(
                 borderRadius: BorderRadius.all(Radius.circular(16)),
                 onTap: () {
@@ -59,7 +54,7 @@ class CommonGamePauseDialogView extends StatelessWidget {
         ),
         SizedBox(height: 24),
         Text(
-          "Your current score is $score",
+          "Sizning eng yuqori natijangiz $score",
           style: Theme.of(context).textTheme.caption!.copyWith(fontSize: 16),
         ),
         SizedBox(height: 24),
@@ -88,11 +83,7 @@ class CommonGamePauseDialogView extends StatelessWidget {
                             end: Alignment.bottomCenter,
                           ),
                         ),
-                        child: Text("RESUME",
-                            style: Theme.of(context)
-                                .textTheme
-                                .subtitle1!
-                                .copyWith(fontSize: 18, color: Colors.white))),
+                        child: Text("DAVOM ETISH", style: Theme.of(context).textTheme.subtitle1!.copyWith(fontSize: 18, color: Colors.white))),
                   ),
                 ),
               ),

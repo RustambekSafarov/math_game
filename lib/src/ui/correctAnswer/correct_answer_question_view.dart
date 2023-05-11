@@ -19,10 +19,7 @@ class CorrectAnswerQuestionView extends StatelessWidget {
             ? questionView
             : Text(
                 question.firstOperand.value,
-                style: Theme.of(context)
-                    .textTheme
-                    .subtitle2!
-                    .copyWith(fontSize: 30),
+                style: Theme.of(context).textTheme.subtitle2!.copyWith(fontSize: 30),
               ),
         SizedBox(width: 14),
         Text(
@@ -33,42 +30,35 @@ class CorrectAnswerQuestionView extends StatelessWidget {
         question.secondOperand.isQuestionMark
             ? questionView
             : Text(
-          question.secondOperand.value,
-          style: Theme.of(context).textTheme.subtitle2!.copyWith(fontSize: 30),
-        ),
+                question.secondOperand.value,
+                style: Theme.of(context).textTheme.subtitle2!.copyWith(fontSize: 30),
+              ),
         if (question.secondOperator != null)
           Row(
             children: [
               SizedBox(width: 14),
               Text(
                 question.secondOperator!,
-                style: Theme.of(context)
-                    .textTheme
-                    .subtitle2!
-                    .copyWith(fontSize: 30),
+                style: Theme.of(context).textTheme.titleSmall!.copyWith(fontSize: 30),
               ),
               SizedBox(width: 14),
               question.thirdOperand!.isQuestionMark
                   ? questionView
-                  :
-              Text(
-                question.thirdOperand!.value,
-                style: Theme.of(context)
-                    .textTheme
-                    .subtitle2!
-                    .copyWith(fontSize: 30),
-              ),
+                  : Text(
+                      question.thirdOperand!.value,
+                      style: Theme.of(context).textTheme.titleSmall!.copyWith(fontSize: 30),
+                    ),
             ],
           ),
         SizedBox(width: 6),
         Text(
           "=",
-          style: Theme.of(context).textTheme.subtitle2!.copyWith(fontSize: 30),
+          style: Theme.of(context).textTheme.titleSmall!.copyWith(fontSize: 30),
         ),
         SizedBox(width: 6),
         Text(
           question.answer.toString(),
-          style: Theme.of(context).textTheme.subtitle2!.copyWith(fontSize: 30),
+          style: Theme.of(context).textTheme.titleSmall!.copyWith(fontSize: 30),
         ),
       ],
     );

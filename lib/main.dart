@@ -19,11 +19,6 @@ Future<void> main() async {
 
   FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.instance;
 
-  if (kDebugMode) {
-    await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(false);
-    await firebaseAnalytics.setAnalyticsCollectionEnabled(false);
-  }
-
   FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
 
   PlatformDispatcher.instance.onError = (error, stack) {
@@ -39,8 +34,7 @@ Future<void> main() async {
       providers: [
         // Provider<SharedPreferences>(create: (context) => sharedPreferences),
         ChangeNotifierProvider(
-          create: (context) =>
-              ThemeProvider(sharedPreferences: sharedPreferences),
+          create: (context) => ThemeProvider(sharedPreferences: sharedPreferences),
         ),
         ChangeNotifierProvider<DashboardProvider>(
           create: (context) => GetIt.I.get<DashboardProvider>(),
@@ -54,6 +48,5 @@ Future<void> main() async {
 }
 
 setupServiceLocator(SharedPreferences sharedPreferences) {
-  GetIt.I.registerSingleton<DashboardProvider>(
-      DashboardProvider(preferences: sharedPreferences));
+  GetIt.I.registerSingleton<DashboardProvider>(DashboardProvider(preferences: sharedPreferences));
 }

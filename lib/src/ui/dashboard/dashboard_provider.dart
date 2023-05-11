@@ -28,7 +28,7 @@ class DashboardProvider extends ChangeNotifier {
       case PuzzleType.MATH_PUZZLE:
         list.add(GameCategory(
           1,
-          "Calculator",
+          "Kalkulyator",
           "calculator",
           GameCategoryType.CALCULATOR,
           KeyUtil.calculator,
@@ -36,16 +36,17 @@ class DashboardProvider extends ChangeNotifier {
           AppAssets.icCalculator,
         ));
         list.add(GameCategory(
-            2,
-            "Guess the sign?",
-            "sign",
-            GameCategoryType.GUESS_SIGN,
-            KeyUtil.guessSign,
-            getScoreboard("sign"),
-            AppAssets.icGuessTheSign));
+          2,
+          "Belgini top?",
+          "sign",
+          GameCategoryType.GUESS_SIGN,
+          KeyUtil.guessSign,
+          getScoreboard("sign"),
+          AppAssets.icGuessTheSign,
+        ));
         list.add(GameCategory(
           5,
-          "Correct answer",
+          "To'g'ri javob",
           "correct_answer",
           GameCategoryType.CORRECT_ANSWER,
           KeyUtil.correctAnswer,
@@ -54,7 +55,7 @@ class DashboardProvider extends ChangeNotifier {
         ));
         list.add(GameCategory(
           8,
-          "Quick calculation",
+          "Tez hisoblash",
           "quick_calclation",
           GameCategoryType.QUICK_CALCULATION,
           KeyUtil.quickCalculation,
@@ -65,7 +66,7 @@ class DashboardProvider extends ChangeNotifier {
       case PuzzleType.MEMORY_PUZZLE:
         list.add(GameCategory(
           7,
-          "Mental arithmetic",
+          "Mental arifmetika",
           "mental_arithmatic",
           GameCategoryType.MENTAL_ARITHMETIC,
           KeyUtil.mentalArithmetic,
@@ -74,7 +75,7 @@ class DashboardProvider extends ChangeNotifier {
         ));
         list.add(GameCategory(
           3,
-          "Square root",
+          "Kvadrat ildiz",
           "square_root",
           GameCategoryType.SQUARE_ROOT,
           KeyUtil.squareRoot,
@@ -83,7 +84,7 @@ class DashboardProvider extends ChangeNotifier {
         ));
         list.add(GameCategory(
           9,
-          "Math Grid",
+          "Matematik jadval",
           "math_machine",
           GameCategoryType.MATH_GRID,
           KeyUtil.mathGrid,
@@ -92,7 +93,7 @@ class DashboardProvider extends ChangeNotifier {
         ));
         list.add(GameCategory(
           4,
-          "Mathematical pairs",
+          "Matematik juftlik",
           "math_pairs",
           GameCategoryType.MATH_PAIRS,
           KeyUtil.mathPairs,
@@ -103,7 +104,7 @@ class DashboardProvider extends ChangeNotifier {
       case PuzzleType.BRAIN_PUZZLE:
         list.add(GameCategory(
           6,
-          "Magic triangle",
+          "Sehirli uchburchak",
           "magic_tringle",
           GameCategoryType.MAGIC_TRIANGLE,
           KeyUtil.magicTriangle,
@@ -112,7 +113,7 @@ class DashboardProvider extends ChangeNotifier {
         ));
         list.add(GameCategory(
           10,
-          "Picture Puzzle",
+          "Rasmli boshqotirma",
           "picture_puzzle",
           GameCategoryType.PICTURE_PUZZLE,
           KeyUtil.picturePuzzle,
@@ -121,7 +122,7 @@ class DashboardProvider extends ChangeNotifier {
         ));
         list.add(GameCategory(
           11,
-          "Number Pyramid",
+          "Raqamlar piramidasi",
           "number_pyramid",
           GameCategoryType.NUMBER_PYRAMID,
           KeyUtil.numberPyramid,
@@ -134,8 +135,7 @@ class DashboardProvider extends ChangeNotifier {
   }
 
   ScoreBoard getScoreboard(String gameCategoryType) {
-    return ScoreBoard.fromJson(
-        json.decode(preferences.getString(gameCategoryType) ?? "{}"));
+    return ScoreBoard.fromJson(json.decode(preferences.getString(gameCategoryType) ?? "{}"));
   }
 
   void setScoreboard(String gameCategoryType, ScoreBoard scoreboard) {
@@ -146,8 +146,7 @@ class DashboardProvider extends ChangeNotifier {
     list.forEach((gameCategory) {
       if (gameCategory.gameCategoryType == gameCategoryType) {
         if (gameCategory.scoreboard.highestScore < newScore.toInt()) {
-          setOverallScore(
-              gameCategory.scoreboard.highestScore, newScore.toInt());
+          setOverallScore(gameCategory.scoreboard.highestScore, newScore.toInt());
           gameCategory.scoreboard.highestScore = newScore.toInt();
         }
         setScoreboard(gameCategory.key, gameCategory.scoreboard);
@@ -166,12 +165,7 @@ class DashboardProvider extends ChangeNotifier {
   }
 
   bool isFirstTime(GameCategoryType gameCategoryType) {
-    return list
-        .where((GameCategory gameCategory) =>
-            gameCategory.gameCategoryType == gameCategoryType)
-        .first
-        .scoreboard
-        .firstTime;
+    return list.where((GameCategory gameCategory) => gameCategory.gameCategoryType == gameCategoryType).first.scoreboard.firstTime;
   }
 
   void setFirstTime(GameCategoryType gameCategoryType) {
